@@ -1,0 +1,115 @@
+##Exercise 1 Univariate
+##By Johnson Nguyen 
+
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+location=barplot(ToPlot,
+         col = paletteHereNew,
+         border=NA,
+         main=titleText,
+         sub=sourceText,
+         cex.names = 0.7, #shrink category names
+         xlim=c(0,50), 
+         xlab = '(in %)', 
+         horiz = T)
+library(ggplot2)
+tableFreq=as.data.frame(ToPlot)
+library(ggplot2)
+tableFreqO=tableFreq[order(tableFreq$pct),]
+base= ggplot(data = tableFreqO,
+aes(x = locale,
+y = pct)) 
+plot1 = base + geom_bar(fill ="gray",stat = 'identity')
+plot2 = plot1 + labs(title=titleText2, x =NULL,y = NULL,caption = sourceText)
+```{r}
+location=barplot(ToPlot,
+         col = paletteHereNew,
+         border=NA,
+         main=titleText,
+         sub=sourceText,
+         cex.names = 0.7, #shrink category names
+         xlim=c(0,50), 
+         xlab = '(in %)', 
+         horiz = T)
+library(ggplot2)
+tableFreq=as.data.frame(ToPlot)
+library(ggplot2)
+tableFreqO=tableFreq[order(tableFreq$pct),]
+base= ggplot(data = tableFreqO,
+aes(x = locale,
+y = pct)) 
+plot1 = base + geom_bar(fill ="gray",stat = 'identity')
+plot2 = plot1 + labs(title=titleText2, x =NULL,y = NULL,caption = sourceText)plot3 = plot2 + geom_hline(yintercept = 25, #where
++                            linetype="dashed", 
++                            size=1.5, #thickness
++                            alpha=0.5) #transparency
+plot3
+plot3 + scale_x_discrete(limits=tableFreqO$locale)
+plot2 + scale_x_discrete(limits=tableFreqO$locale)
+plot(cars)
+plot(cars)
+location=barplot(ToPlot,
+          col = paletteHereNew,
+          border=NA,
+          main=titleText,
+          sub=sourceText,
+          cex.names = 0.7, #shrink category names
+          xlim=c(0,50), 
+          xlab = '(in %)', 
+          horiz = T)
+library(ggplot2)
+tableFreq=as.data.frame(ToPlot)
+library(ggplot2)
+tableFreqO=tableFreq[order(tableFreq$pct),]
+location=barplot(ToPlot,
+          col = paletteHereNew,
+          border=NA,
+          main=titleText,
+          sub=sourceText,
+          cex.names = 0.7, #shrink category names
+          xlim=c(0,50), 
+          xlab = '(in %)', 
+          horiz = T)
+library(ggplot2)
+tableFreq=as.data.frame(ToPlot)
+library(ggplot2)
+tableFreqO=tableFreq[order(tableFreq$pct),]
+```
+```{r}
+base = ggplot(tableFreq, aes(x=locale,pct)) 
+lolliplot1=base + geom_segment(aes(y = 0, 
+                                   x = locale, 
+                                   yend = pct, 
+                                   xend = locale), color = "grey50") 
+lolliplot1 + geom_point()
+
+tableFreq[order(tableFreq$pct),]
+# reordering DF steps:
+tableFreqO=tableFreq[order(tableFreq$pct),]
+
+
+base = ggplot(tableFreqO, aes(locale,pct)) 
+lolliplot1=base + geom_segment(aes(y = 0, 
+                                   x = locale, 
+                                   yend = pct, 
+                                   xend = locale), color = "gray") 
+lolliplot2 = lolliplot1 + geom_point()
+lolliplot2 + scale_x_discrete(limits=tableFreqO$locale) # key element
+```
+
